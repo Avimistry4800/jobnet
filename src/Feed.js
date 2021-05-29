@@ -7,6 +7,7 @@ import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import CalendarViewDayIcon from "@material-ui/icons/CalendarViewDay";
 import InputOption from './InputOption';
+import Post from './Post';
 
 
 const Feed = () => {
@@ -56,6 +57,8 @@ const sendPost = (e) =>{
                     <InputOption Icon={CalendarViewDayIcon} title='Write article' color="#7FC15E" />
                 </div>
             </div>
+            {/* Posts */}
+            <Post name="Noman" description="This is test" message="Wow this worked" />
         </div>
     );
 };
