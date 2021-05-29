@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from './Firebase';
+import './Feed.css';
+import CreateIcon from "@material-ui/icons/Create";
 
 const Feed = () => {
 const [input, setInput] =useState('')
@@ -32,8 +34,16 @@ const sendPost = (e) =>{
 
 
     return (
-        <div>
-            
+        <div className="feed">
+            <div className="feed_inputContainer">
+                <div className="feed_input">
+                    <CreateIcon />
+                    <form>
+                        <input type="text" />
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };
