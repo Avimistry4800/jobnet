@@ -2,15 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { db } from './Firebase';
 
 const Feed = () => {
+const [input, setInput] =useState('')
+
 const [posts, setPosts] = useState([]);
-
-
-
-
-
-
-
-
 
 useEffect(() =>{
     db.collection("posts").onSnapshot((snapshot) => 
@@ -28,7 +22,8 @@ const sendPost = (e) =>{
 
     db.collection("posts").add({
         name: 'Avi Mistry',
-        description: 'This is test'
+        description: 'This is test',
+        message: ''
     })
 }
 // Firebase 
