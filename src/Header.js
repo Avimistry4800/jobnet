@@ -9,16 +9,17 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { logout } from './features/userSlice';
-import { useDispatch } from 'react-redux';
+import { logout, selectUser } from './features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './Firebase';
 
 const Header = () => {
+    const user = useSelector(selectUser)
     const dispatch =useDispatch()
 
     const logOutOfApp = () => {
         dispatch(logout());
-        auth.signOut()
+        auth.signOut();
     }
     return (
         <div className='header'>
