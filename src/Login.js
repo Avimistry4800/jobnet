@@ -1,15 +1,45 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from './features/userSlice'
+import { auth } from './Firebase';
 import './Login.css'
 
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
+    const [profilePic, setProfilePic] = useState("")
+    const dispatch = useDispatch()
+
     const loginToApp = (e) => {
         e.preventDefault();
     }
     const register = () => {
+        if(!name){
+            return alert("Please Insert Your Full Name");
+        }
 
+        auth.createUserWithEmailAndPassword(email, password).then(
+            (userAuth) => {
+            userAuth.user.updateProfile({
+                displayName: name,
+                photoURL: profilePic
+            })
+        
+        .then(() => {
+            dispatch(
+                login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: name,
+                photoUrl: profilePic
+
+                })
+            );
+        }).catch((error) => {
+            alert(error.message)
+        })
+    })
     }
     return (
         <div className="login">
@@ -22,8 +52,9 @@ const Login = () => {
                 />
                 <input 
                 type="text" 
-                placeholder="Profile url-optional" 
+                placeholder="Profile Pic url-optional" 
                 value = {profilePic}
+                onChange={ e =>setProfilePic(e.target.value)}
                 />
                 <input 
                 value={email} 
