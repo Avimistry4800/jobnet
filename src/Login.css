@@ -32,3 +32,10 @@
     background-color: green;
     border-radius: 5px;
 }
+.login__register{
+    color: green;
+    cursor: pointer;
+}
+.login__register > p{
+    margin-top: 25px;
+}
