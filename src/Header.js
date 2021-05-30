@@ -19,8 +19,7 @@ const Header = () => {
                 <div className="header__search">
                     {/* Search Icon */}
                     <SearchIcon />
-
-                    <input type="text" />
+                    <input placeholder="search" type="text" />
                 </div>
             </div>
 
