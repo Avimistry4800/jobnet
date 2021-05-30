@@ -6,6 +6,10 @@ export const userSlice = createSlice({
     user: null,
   },
   reducers: {
+<<<<<<< HEAD
+    login: (state, action) => {
+      state.value = action.payload;
+=======
     login: (state, action) =>{
       state.user = action.payload;
     },
@@ -17,17 +21,24 @@ export const userSlice = createSlice({
     },
     decrement: (state) => {
       state.value -= 1;
+>>>>>>> 667a45cf96269c57f2e3937ac7aa337dbddc09c3
     },
   
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    logout: (state) => {
+      state.user = null;
     },
   },
 
 });
 
-export const { increment, decrement, incrementByAmount, login, logout } = userSlice.actions;
+<<<<<<< HEAD
+export const { login, logout,  } = userSlice.actions;
 
+=======
+export const { increment, decrement, incrementByAmount, login, logout } = userSlice.actions;
+>>>>>>> 667a45cf96269c57f2e3937ac7aa337dbddc09c3
+
+//selector
 export const selectUser = (state) => state.user.user;
 
 
