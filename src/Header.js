@@ -21,6 +21,7 @@ const Header = () => {
         dispatch(logout());
         auth.signOut();
     }
+    console.log(user);
     return (
         <div className='header'>
             <div className="header__left">
@@ -39,9 +40,7 @@ const Header = () => {
                 <HeaderOption Icon={BusinessCenterIcon} title='Jobs' />
                 <HeaderOption Icon={ChatIcon} title='Messaging' />
                 <HeaderOption Icon={NotificationsIcon} title='Notifications' />
-                <HeaderOption avatar= {user.photoUrl} title='Me'
-                onClick= {logOutOfApp}
-                />
+                <HeaderOption avatar= {true} title='Me' onClick= {logOutOfApp}/>
                 
             </div>
         </div>
