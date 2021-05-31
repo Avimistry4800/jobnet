@@ -6,15 +6,18 @@ import ImageIcon from "@material-ui/icons/Image";
 import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import CalendarViewDayIcon from "@material-ui/icons/CalendarViewDay";
-import InputOption from "./InputOption";
-import Post from "./Post";
-import firebase from "firebase";
-import { useSelector } from "react-redux";
-import {selectUser} from  './features/userSlice';
+import InputOption from './InputOption';
+import Post from './Post';
+import firebase from 'firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
+import FlipMove from "react-flip-move";
+
+
 
 const Feed = () => {
-    const user = useSelector(selectUser);
-    const [input, setInput] = useState("");
+const user = useSelector(selectUser)
+const [input, setInput] =useState('')
 
     const [posts, setPosts] = useState([]);
 
@@ -86,17 +89,19 @@ const Feed = () => {
                 </div>
             </div>
             {/* Posts */}
-            {posts.map(
-                ({ id, data: { name, description, message, photoUrl } }) => (
-                    <Post
-                        Key={id}
-                        name={name}
-                        description={description}
-                        message={message}
-                        photoUrl={photoUrl}
-                    />
-                )
-            )}
+
+    <FlipMove>
+    {posts.map(({id, data:{ name, description,message, photoUrl}})=>(
+    <Post 
+    Key={id}
+    name={name}
+    description={description}
+    message={message}
+    photoUrl={photoUrl}
+    />
+))}
+</FlipMove>
+
 
             {/* <Post name="Noman" description="This is test" message="Wow this worked" /> */}
         </div>
