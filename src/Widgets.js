@@ -27,7 +27,7 @@ const Widgets = () => {
             {newsArticle("React is back","Top news 9999 readers")}
             {newsArticle("Java","Top news 9999 readers")}
             {newsArticle("junior react developer","Top news 9999 readers")}
-            {newsArticle("Intership ","Top news 9999 readers")}
+            {newsArticle("Internship ","Top news 9999 readers")}
         </div>
     );
 };
