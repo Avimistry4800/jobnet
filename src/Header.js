@@ -39,7 +39,7 @@ const Header = () => {
                 <HeaderOption Icon={BusinessCenterIcon} title='Jobs' />
                 <HeaderOption Icon={ChatIcon} title='Messaging' />
                 <HeaderOption Icon={NotificationsIcon} title='Notifications' />
-                <HeaderOption avatar= {user.photoUrl} title='Me'
+                <HeaderOption avatar={true} title='Me'
                 onClick= {logOutOfApp}
                 />
                 
