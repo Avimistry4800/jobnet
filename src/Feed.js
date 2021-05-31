@@ -11,7 +11,7 @@ import Post from './Post';
 import firebase from 'firebase';
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
-import FlipMove from "react-flip-move";
+import FlipMove from 'react-flip-move';
 
 
 
