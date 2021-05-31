@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice"
 import "./App.css";
 import Feed from "./Feed";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Login from "./Login";
 import { auth } from "./Firebase";
-import { logout, login } from './features/userSlice'
+import { logout, login, selectUser } from './features/userSlice'
+import Widgets from "./Widgets";
 
 function App() {
     const user = useSelector(selectUser);
@@ -35,6 +35,7 @@ function App() {
                 <div className="app__body">
                 <Sidebar />
                 <Feed />
+                <Widgets />
                 {/* Widgets*/}
             </div>
             )}
